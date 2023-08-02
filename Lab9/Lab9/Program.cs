@@ -104,9 +104,12 @@ namespace Lab9
             }
         }
 
+        //Rewritten Part2 as a method instead of using LINQ Query statements
         public static void Part5WithLINQ(Location[] items)
         {
-
+            var neighborHoodQuery = items
+                .Where(item => item.properties.neighborhood != " ")
+                .Select(items => items.properties.neighborhood);
         }
     }
 }
